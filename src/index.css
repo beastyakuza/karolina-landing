@@ -41,4 +41,9 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 .fade-up { animation: fadeUp 700ms ease-out both; }
+body {
+  background-color: #fafafa;
+  color: #18181b;
+}
+
 
