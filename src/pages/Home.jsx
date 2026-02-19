@@ -1,6 +1,8 @@
 import Reveal from "../components/Reveal.jsx";
+import FAQ from "../components/FAQ.jsx";
 
-const WHATSAPP_NUMBER = "573001234567"; // cámbialo
+
+const WHATSAPP_NUMBER = "573001234567"; // cámbialo por el número real
 const WHATSAPP_TEXT = encodeURIComponent(
   "Hola Karolina, vi tu portafolio y me gustaría solicitar una asesoría. ¿Tienes disponibilidad esta semana?"
 );
@@ -124,12 +126,57 @@ export default function Home() {
         </section>
       </Reveal>
 
+      {/* TESTIMONIOS */}
+      <Reveal className="mt-28">
+        <section>
+          <h2 className="fluid-h2 font-semibold text-zinc-900">Testimonios</h2>
+          <p className="mt-4 fluid-base max-w-3xl text-zinc-600 leading-relaxed">
+            Ejemplos de feedback de clientes.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                name: "Dirección financiera",
+                role: "Pyme comercial",
+                quote:
+                  "El análisis fue muy claro y accionable. Identificamos productos con margen negativo y ajustamos precios con criterio.",
+              },
+              {
+                name: "Fundador",
+                role: "Startup de servicios",
+                quote:
+                  "Las proyecciones por escenarios nos ayudaron a decidir con seguridad. El informe quedó listo para presentar a socios.",
+              },
+              {
+                name: "Operaciones",
+                role: "Empresa de manufactura",
+                quote:
+                  "El tablero de KPIs simplificó el seguimiento semanal. Ahora tenemos métricas y decisiones en el mismo lugar.",
+              },
+            ].map((t) => (
+              <article
+                key={t.name}
+                className="rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm transition hover:shadow-md"
+              >
+                <p className="fluid-base leading-relaxed text-zinc-700">
+                  “{t.quote}”
+                </p>
+
+                <div className="mt-6 border-t border-zinc-200 pt-5">
+                  <p className="fluid-base font-semibold text-zinc-900">{t.name}</p>
+                  <p className="fluid-sm text-zinc-500">{t.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </Reveal>
+      <FAQ />
+
       {/* CONTACTO */}
       <Reveal className="mt-28">
-        <section
-          id="contacto"
-          className="rounded-3xl bg-zinc-900 p-12 text-white"
-        >
+        <section id="contacto" className="rounded-3xl bg-zinc-900 p-12 text-white">
           <h2 className="fluid-h2 font-semibold">¿Hablamos por WhatsApp?</h2>
           <p className="mt-6 fluid-base max-w-2xl text-white/80 leading-relaxed">
             Cuéntame tu necesidad (sector, objetivo y fecha) y te respondo con una propuesta.
